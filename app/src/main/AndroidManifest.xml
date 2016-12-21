@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kenso.alv.mc_translator">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <application
+        android:launchMode="singleTask"
+        android:clearTaskOnLaunch="true"
+        android:stateNotNeeded="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <!-- Broadcast Receivers
+        <receiver android:name="com.kenso.alv.mc_translator.RemoteControlReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.VOICE_COMMAND"/>
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </receiver>
+-->
+        <activity android:name=".LanguageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--category android:name="android.intent.category.HOME" /-->
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="nosensor">
+
+            <intent-filter>
+                <action android:name="android.speech.action.VOICE_SEARCH_HANDS_FREE"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
