@@ -31,19 +31,36 @@
             </intent-filter>
         </receiver>
 -->
-        <activity android:name=".LanguageActivity">
+        <activity android:name=".LanguageActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <!--category android:name="android.intent.category.HOME" /-->
+                <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
-
             </intent-filter>
         </activity>
 
+        <activity android:name=".ScreenSlidePagerActivity" android:label="Mipager"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.speech.action.VOICE_SEARCH_HANDS_FREE"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
+
         <activity android:name=".MainActivity"
             android:excludeFromRecents="true"
-            android:screenOrientation="nosensor">
+            android:screenOrientation="landscape">
 
             <intent-filter>
                 <action android:name="android.speech.action.VOICE_SEARCH_HANDS_FREE"/>
